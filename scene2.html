@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Immersive Data Visualization</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const data = [3, 6, 9, 12, 15]; // Example data set
+                const sceneEl = document.querySelector('a-scene');
+
+                data.forEach((value, index) => {
+                    let bar = document.createElement('a-box');
+                    bar.setAttribute('position', `${index} 0 0`);
+                    bar.setAttribute('height', value);
+                    bar.setAttribute('depth', 0.5);
+                    bar.setAttribute('width', 0.5);
+                    bar.setAttribute('color', '#4CAF50');
+                    sceneEl.appendChild(bar);
+                });
+            });
+        </script>
+        <a-sky color="#ECECEC"></a-sky>
+        <a-camera position="0 0 5"></a-camera>
+    </a-scene>
+</body>
+</html>
